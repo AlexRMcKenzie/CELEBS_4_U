@@ -7,8 +7,10 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
-puts 'Creating 50 fake celebrities...'
-50.times do
+Celebrity.destroy_all
+
+puts 'Creating 30 fake celebrities...'
+30.times do
   celebrity = Celebrity.new(
     first_name:    Faker::Name.first_name,
     last_name: Faker::Name.last_name,
