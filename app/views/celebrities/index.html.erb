@@ -1,0 +1,5 @@
+Celebrity
+
+<% @celebrities.each do |celebrity| %>
+  <%= link_to celebrity.first_name, celebrity_path(celebrity) %>
+<% end %>
