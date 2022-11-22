@@ -1,2 +1,26 @@
-<%= @celebrity.first_name %>
-<%= @celebrity.bio %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Bonnie_Tyler_ESC_-_United_Kingdom_01_crop.JPG/800px-Bonnie_Tyler_ESC_-_United_Kingdom_01_crop.JPG);">
+  <div class="container">
+    <h1><%= @celebrity.first_name%> <%= @celebrity.last_name %></h1>
+  </div>
+</div>
+
+<div class="container margin-top-negative">
+  <div class="row justify-content-center">
+    <div class="col-12 col-8 col-lg-6">
+      <div class="celeb-show-card">
+        <h2><%= @celebrity.category.capitalize %></h2>
+        <p class="celeb-age"><%= @celebrity.age %></p>
+      </div>
+      <div class="celeb-show-card">
+        <h3>A little bit of info on your star...</h3>
+        <p><%= @celebrity.bio %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-4">
+    <div class="celeb-show-card">
+      <button type="button" class="btn btn-primary">Book this celeb!</button>
+    </div>
+  </div>
+</div>
