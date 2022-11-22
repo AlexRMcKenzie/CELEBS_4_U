@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
+
+puts 'Creating 50 fake celebrities...'
+50.times do
+  celebrity = Celebrity.new(
+    first_name:    Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    age:  rand(20..80),
+    category: Faker::Job.field,
+    bio: ''
+  )
+  celebrity.save!
+end
+puts 'Finished!'
