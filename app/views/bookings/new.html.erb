@@ -1,4 +1,4 @@
 <div class = "container mt-5">
-  <h2>Book <%= @celebrity %> right now! </h2>
+  <h2>Book <em><b><%= @celebrity.first_name %> <%= @celebrity.last_name %></b></em> right now! </h2>
   <%= render partial: "form" %>
 </div>

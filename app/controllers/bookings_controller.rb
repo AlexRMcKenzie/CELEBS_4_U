@@ -1,7 +1,7 @@
 require 'date'
 
 class BookingsController < ApplicationController
-  # skip_before_action :authenticate_user!, only: %i[new create]
+  skip_before_action :authenticate_user!
 
   def show
     @booking = Booking.find(params[:id])
@@ -34,17 +34,30 @@ class BookingsController < ApplicationController
     @condition1 = Booking.where(end_date: @dates).count.zero?
     @condition2 = Booking.where(start_date: ..new_start_date)
                          .where(end_date: new_end_date..).count.zero?
-    if @condition = @condition0 && @condition1 && @condition2
-      @booking.celebrity = @celebrity
-      @booking.user = current_user
-      if @booking.save
-        redirect_to booking_path(@booking)
-      else
-        render :new, status: :unprocessable_entity
-      end
+    @condition = @condition0 && @condition1 && @condition2
+    @booking.celebrity = @celebrity
+    @booking.user = current_user
+    # raise
+    if @booking.valid? && @condition
+      @booking.save
+      redirect_to booking_path(@booking)
+    elsif !@booking.valid?
+      render :new, status: :unprocessable_entity
     else
-      pass
+      redirect_to new_celebrity_booking_path(@celebrity), alert: "Not available dates"
     end
+    # if @booking.valid?
+    #   if @condition
+    #     @booking.celebrity = @celebrity
+    #     @booking.user = current_user
+    #     @booking.save
+    #     redirect_to booking_path(@booking)
+    #   else
+    #     redirect_to new_celebrity_booking_path(@celebrity), alert: "Not available dates"
+    #   end
+    # else
+    #   render :new, status: :unprocessable_entity
+    # end
   end
 
   def booking_params
