@@ -3,6 +3,15 @@ require 'date'
 class BookingsController < ApplicationController
   skip_before_action :authenticate_user!
 
+  def index
+    # @bookings = Booking.where(user_id: @user.id)
+    # raise
+    @bookings = Booking.all
+    @bookings = @bookings.map do |booking|
+      [booking, Celebrity.find(booking.celebrity_id)]
+    end
+  end
+
   def show
     @booking = Booking.find(params[:id])
   end
