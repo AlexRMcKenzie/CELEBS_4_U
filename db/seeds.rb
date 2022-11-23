@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+# CELEBRITIES
+
 puts "cleaning db ..."
 
 Celebrity.destroy_all
@@ -100,6 +102,22 @@ celebrity = Celebrity.create!(
   category: 'singer',
   bio: 'Are you holding out for a hero?',
   url: 'https://upload.wikimedia.org/wikipedia/commons/f/f1/Bonnie_Tyler_ESC_-_United_Kingdom_01_crop.JPG'
+)
+
+# USERS
+
+user = User.create!(
+  first_name: 'User1'
+  last_name: 'User1'
+  email: 'user1@gmail.com'
+  password: '1234567890'
+)
+
+user = User.create!(
+  first_name: 'User2'
+  last_name: 'User2'
+  email: 'user2@gmail.com'
+  password: '987654321'
 )
 
 puts "done!"
