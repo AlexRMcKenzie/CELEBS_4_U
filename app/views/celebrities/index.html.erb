@@ -1,43 +1,25 @@
-<div class="container">
-<%# <h1>Find Your Celebrity</h1> %>
-<% @celebrities.each do |celebrity| %>
-  <%= link_to celebrity.first_name, celebrity_path(celebrity) %>
-<% end %>
+<div class= "bg-color">
 
-<%= simple_form_for :search, url: root_path, method: :get do |f| %>
-  <div class="search-form-control form-group">
-    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-    <button name="button" type="submit" class="btn btn-flat">
-      <i class="fas fa-search"></i> Search
-    </button>
-  </div>
-<% end %>
+  <div class="container">
+  <%# <h1>Find Your Celebrity</h1> %>
+    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+      <div class="search-form-control form-group">
+        <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+        <button name="button" type="submit" class="btn btn-flat">
+          <i class="fas fa-search"></i> Search
+        </button>
+      </div>
+    <% end %>
 
-<div class="cards">
+    <div class="cards">
+      <% @celebrities.each do |celebrity| %>
+        <%#= link_to celebrity.first_name, celebrity_path(celebrity) %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=celebrity.url %>)">
+        <%= celebrity.first_name %> <%= celebrity.last_name %>
+        </div>
+      <% end %>
+    </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.pinimg.com/474x/c9/7c/54/c97c54d09e728cc4e68ae6f630d43984.jpg)">
-    Tom Cruise
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.pinimg.com/564x/94/38/ea/9438ea4f3fe17769cfb091ee27db06c7.jpg)">
-    Adele
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.pinimg.com/564x/de/df/eb/dedfeb167aaada691f67aa894911bc47.jpg)">
-    Lewis Hamilton
   </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.pinimg.com/474x/01/4f/a7/014fa78ae4699bf4d436d131a066b88a.jpg)">
-    King Charles III and Camilla
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.pinimg.com/474x/3d/03/fd/3d03fdfdaa49adb7f3ec3b3eb31a4af2.jpg)">
-    Nusr-Et
-  </div>
-
-   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.pinimg.com/474x/64/0e/0b/640e0b592e7271e9eb33316b53499f25.jpg)">
-    Jamie Oliver
-  </div>
-
-</div>
 </div>
