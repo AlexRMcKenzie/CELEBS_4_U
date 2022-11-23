@@ -78,15 +78,6 @@ celebrity = Celebrity.create!(
 )
 
 celebrity = Celebrity.create!(
-  first_name: 'Jamie',
-  last_name: 'Oliver',
-  age: 47,
-  category: 'chef',
-  bio: "don't eat chicken nuggets - they're delicious!",
-  url: 'https://i.pinimg.com/474x/64/0e/0b/640e0b592e7271e9eb33316b53499f25.jpg'
-)
-
-celebrity = Celebrity.create!(
   first_name: 'Bob',
   last_name: 'Marley',
   age: 76,
