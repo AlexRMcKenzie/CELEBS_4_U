@@ -1,10 +1,10 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  // background: white;
   font-family: inter;
   font-weight: 400;
-  font-size: 18px;
-  color: beige;
+  font-size: 16px;
+  color: white;
   text-transform: capitalize;
 }
 
@@ -14,4 +14,8 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.nav-link {
+  color: white;
 }
