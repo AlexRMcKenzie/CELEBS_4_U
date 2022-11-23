@@ -1,0 +1,9 @@
+<%= simple_form_for [@celebrity, @booking] do |f| %>
+  <% tomorrow = Date.today + 1 %>
+  <% tommorow_midday = [tomorrow.year, tomorrow.month, tomorrow.day + 0.5] %>
+  <% after_tommorow_midday = [(tomorrow+1).year, (tomorrow+1).month, (tomorrow+1).day + 0.5] %>
+  <%= f.input :start_date, :minute_step => 15 %> <%#, selected: DateTime.new(*tommorow_midday)%>
+  <%= f.input :end_date, :minute_step => 15 %> <%# selected: DateTime.new(*after_tommorow_midday) %>
+  <%= f.input :location %>
+  <%= f.submit "Book Now!", class: "btn btn-primary" %>
+<% end %>
