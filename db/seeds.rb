@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+# CELEBRITIES
+
 puts "cleaning db ..."
 
 Celebrity.destroy_all
@@ -17,7 +19,7 @@ celebrity = Celebrity.create!(
     age: 61,
     category: 'actor',
     bio: 'silver fox living in Lake Como',
-    url: 'https://upload.wikimedia.org/wikipedia/commons/8/8d/George_Clooney_2016.jpg'
+    url: 'https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fi.pinimg.com%2F736x%2F33%2Fa2%2F37%2F33a2378a93f763adcd17eb4a9460bb17--beard-ideas-modern-man.jpg'
 )
 
 
@@ -74,5 +76,36 @@ celebrity = Celebrity.create!(
   bio: "don't eat chicken nuggets - they're delicious!",
   url: 'https://i.pinimg.com/474x/64/0e/0b/640e0b592e7271e9eb33316b53499f25.jpg'
 )
+
+celebrity = Celebrity.create!(
+  first_name: 'Bob',
+  last_name: 'Marley',
+  age: 76,
+  category: 'singer',
+  bio: "We're Jammin'",
+  url: 'https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2015/2/5/1423140827327/Bob-Marley-in-1979-before-009.jpg?width=620&quality=45&dpr=2&s=none'
+)
+
+celebrity = Celebrity.create!(
+  first_name: 'Bonnie',
+  last_name: 'Tyler',
+  age: 71,
+  category: 'singer',
+  bio: 'Are you holding out for a hero?',
+  url: 'https://upload.wikimedia.org/wikipedia/commons/f/f1/Bonnie_Tyler_ESC_-_United_Kingdom_01_crop.JPG'
+)
+
+# USERS
+
+date1 = DateTime.new(2022,12,24,12,30)
+date2 = DateTime.new(2022,12,28,12,30)
+date3 = DateTime.new(2023,1,3,12,30)
+date4 = DateTime.new(2023,1,5,12,30)
+
+user = User.create!( first_name: 'User1', last_name: 'User1', email: 'user1@gmail.com', password: '1234567890')
+user = User.create!( first_name: 'User2', last_name: 'User2', email: 'user2@gmail.com', password: '1234567890')
+
+booking = Booking.create!(start_date: date1, end_date: date2, location: 'London' , celebrity_id:Celebrity.first.id, user_id: User.first.id)
+booking = Booking.create!(start_date: date3, end_date: date4, location: 'London' , celebrity_id:Celebrity.last.id, user_id: User.last.id)
 
 puts "done!"
