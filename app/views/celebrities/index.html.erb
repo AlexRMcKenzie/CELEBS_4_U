@@ -1,34 +1,24 @@
+<div class= "bg-color">
 
-<div class="container">
-<h1>Find Your Celebrity</h1>
-<% @celebrities.each do |celebrity| %>
-  <%= link_to celebrity.first_name, celebrity_path(celebrity) %>
-<% end %>
+  <div class="container">
+  <%# <h1>Find Your Celebrity</h1> %>
+    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+      <div class="search-form-control form-group">
+        <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+        <button name="button" type="submit" class="btn btn-flat">
+          <i class="fas fa-search"></i> Search
+        </button>
+      </div>
+    <% end %>
 
-<div class="cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    Actors
+    <div class="cards">
+      <% @celebrities.each do |celebrity| %>
+        <%#= link_to celebrity.first_name, celebrity_path(celebrity) %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=celebrity.url %>)">
+        <%= celebrity.first_name %> <%= celebrity.last_name %>
+        </div>
+      <% end %>
+    </div>
+
   </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.pinimg.com/474x/f4/49/c2/f449c2d17c7e6757048d170a8a7f2d52.jpg)">
-    Musicians
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    Sports Personalities
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    Royals
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    Influencers
-  </div>
-
-   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    TikTokers
-  </div>
-
-</div>
 </div>
