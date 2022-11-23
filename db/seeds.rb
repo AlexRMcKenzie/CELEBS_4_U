@@ -106,18 +106,15 @@ celebrity = Celebrity.create!(
 
 # USERS
 
-user = User.create!(
-  first_name: 'User1'
-  last_name: 'User1'
-  email: 'user1@gmail.com'
-  password: '1234567890'
-)
+date1 = DateTime.new(2022,12,24,12,30)
+date2 = DateTime.new(2022,12,28,12,30)
+date3 = DateTime.new(2023,1,3,12,30)
+date4 = DateTime.new(2023,1,5,12,30)
 
-user = User.create!(
-  first_name: 'User2'
-  last_name: 'User2'
-  email: 'user2@gmail.com'
-  password: '987654321'
-)
+user = User.create!( first_name: 'User1', last_name: 'User1', email: 'user1@gmail.com', password: '1234567890')
+user = User.create!( first_name: 'User2', last_name: 'User2', email: 'user2@gmail.com', password: '1234567890')
+
+booking = Booking.create!(start_date: date1, end_date: date2, location: 'London' , celebrity_id:Celebrity.first.id, user_id: User.first.id)
+booking = Booking.create!(start_date: date3, end_date: date4, location: 'London' , celebrity_id:Celebrity.last.id, user_id: User.last.id)
 
 puts "done!"
