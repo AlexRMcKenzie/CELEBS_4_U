@@ -1,3 +1,7 @@
 
 <div class="banner"><%= image_tag "homepage1.png", alt: "C4u", width: 1700, height: 1000 %></div>
-<div style = "margin: -10"><%= link_to "Write a story", "#", class: "btn btn-ghost" %></div>
+<div style = "margin: -10">
+  <%= link_to celebrities_path, class: "story-btn" do %>
+    <%=  image_tag "explore.png" %>
+  <% end %>
+</div>
