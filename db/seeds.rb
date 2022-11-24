@@ -51,8 +51,8 @@ celebrity = Celebrity.create!(
 )
 
 celebrity = Celebrity.create!(
-  first_name: 'King Charles',
-  last_name: 'Camilla',
+  first_name: 'King Charles III',
+  last_name: 'and Camilla',
   age: 145,
   category: 'royalty',
   bio: "God Save the King!",
