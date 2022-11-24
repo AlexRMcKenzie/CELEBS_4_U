@@ -2,11 +2,20 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+  a {
+    text-decoration: none;
+  }
+  p {
+    color: white;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
 }
 
 .card-category {
   background-size: cover;
-  background-position: center;
+  background-position: top;
   height: 300px;
   display: flex;
   justify-content: center;
