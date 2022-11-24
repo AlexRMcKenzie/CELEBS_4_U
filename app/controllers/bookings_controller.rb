@@ -53,18 +53,6 @@ class BookingsController < ApplicationController
     else
       redirect_to new_celebrity_booking_path(@celebrity), alert: "Not available dates"
     end
-    # if @booking.valid?
-    #   if @condition
-    #     @booking.celebrity = @celebrity
-    #     @booking.user = current_user
-    #     @booking.save
-    #     redirect_to booking_path(@booking)
-    #   else
-    #     redirect_to new_celebrity_booking_path(@celebrity), alert: "Not available dates"
-    #   end
-    # else
-    #   render :new, status: :unprocessable_entity
-    # end
   end
 
   def booking_params
