@@ -33,15 +33,15 @@ class BookingsController < ApplicationController
                     params[:booking]["end_date(5i)"]]
     new_end_date = new_end_date.map(&:to_i)
     new_end_date = DateTime.new(*new_end_date)
-    @dates = new_start_date..new_end_date
-    @condition0 = Booking.where(celebrity_id: @celebrity.id)
-                         .where(start_date: @dates).count.zero?
-    @condition1 = Booking.where(celebrity_id: @celebrity.id)
-                         .where(end_date: @dates).count.zero?
-    @condition2 = Booking.where(celebrity_id: @celebrity.id)
+    dates = new_start_date..new_end_date
+    condition0 = Booking.where(celebrity_id: @celebrity.id)
+                         .where(start_date: dates).count.zero?
+    condition1 = Booking.where(celebrity_id: @celebrity.id)
+                         .where(end_date: dates).count.zero?
+    condition2 = Booking.where(celebrity_id: @celebrity.id)
                          .where(start_date: ..new_start_date)
                          .where(end_date: new_end_date..).count.zero?
-    @condition = @condition0 && @condition1 && @condition2
+    @condition = condition0 && condition1 && condition2
     @booking.celebrity = @celebrity
     @booking.user = current_user
     # raise
