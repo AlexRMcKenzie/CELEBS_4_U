@@ -1,14 +1,41 @@
-
-  <div class = "container mt-5">
-  <h1>My Bookings <em><b>
-  <ol>
-  <% @bookings.each do |booking|%>
-    <li>
-      <ul>
-        <li><%="#{booking[0].start_date} - #{booking[0].end_date}"%></li>
-        <li><%="#{booking[1].first_name} #{booking[1].last_name}" %></li>
-      </ul>
-    </li>
-  <% end %>
-  </ol>
+<div class="container mt-3">
+  <h4 style="text-align:right">
+  <%= @bookings.length %> booking<%=@bookings.length == 1 ? '' : 's' %></h4>
+  <div class="container mt-3" style="width:900px">
+    <ol>
+    <% @bookings.each do |booking| %>
+      <%= link_to booking_path(booking), style:"color: #000000; text-decoration: none" do  %>
+        <div class="my-3 p-0 bg-light border-bottom" style="border-radius:10px; height:250px; overflow: hidden">
+          <li class="d-flex align-items-start justify-content-start">
+            <div style="border-radius:10px">
+            <%= image_tag booking[1].url, style: "float: left; width:  300px; height: 250px; object-fit: cover;"%>
+            </div>
+            <div class="p-3 px-5 lh-base">
+              <h2 class="lh-base"><%=booking[1].first_name %> <%=booking[1].last_name %></h2>
+              <h4 class="lh-base"><%= booking[0].location %></h4>
+              <div class="d-flex align-items-center justify-content-start">
+                <div>
+                  <p>From:</p>
+                </div>
+                <div>
+                  <h5 class="px-5"><%= booking[0].start_date.strftime("%A, %eth %B  %Y") %></h5>
+                  <h5 class="px-5 lh-1"><%= booking[0].start_date.strftime("at %I:%M%p") %></h5>
+                </div>
+              </div>
+              <div class="d-flex align-items-center justify-content-start">
+                <div>
+                  <p>Until:</p>
+                </div>
+                <div>
+                  <h5 class="px-5"><%= booking[0].end_date.strftime("%A, %eth %B  %Y") %></h5>
+                  <h5 class="px-5 lh-1"><%= booking[0].end_date.strftime("at %I:%M%p") %></h5>
+                </div>
+              </div>
+            </div>
+          </li>
+        </div>
+      <% end %>
+    <% end %>
+    </ol>
+  </div>
 </div>

@@ -1,15 +1,10 @@
-require 'date'
-
 class BookingsController < ApplicationController
-  skip_before_action :authenticate_user!
-
   def index
-    # @bookings = Booking.where(user_id: @user.id)
-    # raise
-    @bookings = Booking.all
-    @bookings = @bookings.map do |booking|
+    bookings = Booking.where(user_id: current_user.id)
+    bookings = bookings.map do |booking|
       [booking, Celebrity.find(booking.celebrity_id)]
     end
+    @bookings = bookings.sort_by { |booking| booking[0].start_date }
   end
 
   def show
@@ -38,12 +33,15 @@ class BookingsController < ApplicationController
                     params[:booking]["end_date(5i)"]]
     new_end_date = new_end_date.map(&:to_i)
     new_end_date = DateTime.new(*new_end_date)
-    @dates = new_start_date..new_end_date
-    @condition0 = Booking.where(start_date: @dates).count.zero?
-    @condition1 = Booking.where(end_date: @dates).count.zero?
-    @condition2 = Booking.where(start_date: ..new_start_date)
+    dates = new_start_date..new_end_date
+    condition0 = Booking.where(celebrity_id: @celebrity.id)
+                         .where(start_date: dates).count.zero?
+    condition1 = Booking.where(celebrity_id: @celebrity.id)
+                         .where(end_date: dates).count.zero?
+    condition2 = Booking.where(celebrity_id: @celebrity.id)
+                         .where(start_date: ..new_start_date)
                          .where(end_date: new_end_date..).count.zero?
-    @condition = @condition0 && @condition1 && @condition2
+    @condition = condition0 && condition1 && condition2
     @booking.celebrity = @celebrity
     @booking.user = current_user
     # raise
@@ -55,18 +53,6 @@ class BookingsController < ApplicationController
     else
       redirect_to new_celebrity_booking_path(@celebrity), alert: "Not available dates"
     end
-    # if @booking.valid?
-    #   if @condition
-    #     @booking.celebrity = @celebrity
-    #     @booking.user = current_user
-    #     @booking.save
-    #     redirect_to booking_path(@booking)
-    #   else
-    #     redirect_to new_celebrity_booking_path(@celebrity), alert: "Not available dates"
-    #   end
-    # else
-    #   render :new, status: :unprocessable_entity
-    # end
   end
 
   def booking_params
