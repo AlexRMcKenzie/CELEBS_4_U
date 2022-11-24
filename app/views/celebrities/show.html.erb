@@ -3,23 +3,25 @@
     <h1><%= @celebrity.first_name%> <%= @celebrity.last_name %></h1>
   </div>
 </div>
-<div class="container margin-top-negative">
-  <div class="row justify-content-center">
-    <div class="col-12 col-8 col-lg-6">
-      <div class="celeb-show-card">
-        <h2><%= @celebrity.category.capitalize %></h2>
-        <p class="celeb-age"><%= @celebrity.age %></p>
-      </div>
-      <div class="celeb-show-card">
-        <h3>A little bit of info on your star...</h3>
-        <p><%= @celebrity.bio %></p>
-      </div>
-        <%= link_to "Book #{@celebrity.first_name}", new_celebrity_booking_path(@celebrity), class:"btn btn-outline-primary"%>
-      <br>
-        <div class="col-12 col-sm-6">
-        <div class="bg-white rounded p-3">
-          <h3>Book <em><b><%= @celebrity.first_name %> <%= @celebrity.last_name %></b></em> right now! </h3>
-        <%= render partial: "form" %>
+
+<div style="width:1000px">
+  <div class="container mt-3 d-flex align-items-center justify-content-start">
+
+  <div>
+    <div class="celeb-show-card">
+      <h2><%= @celebrity.category.capitalize %></h2>
+      <p class="celeb-age"><%= @celebrity.age %></p>
+    </div>
+    <div class="celeb-show-card">
+      <h3>A little bit of info on your star...</h3>
+      <p><%= @celebrity.bio %></p>
     </div>
   </div>
+
+  <div class="col-12 col-sm-6 bg-white rounded p-3">
+    <h3>Book <em><b><%= @celebrity.first_name %> <%= @celebrity.last_name %></b></em> right now! </h3>
+    <%= render partial: "form" %>
+  </div>
+
+
 </div>
