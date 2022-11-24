@@ -22,5 +22,16 @@
         </div>
       </div>
     </div>
+    <div class="celeb-show-card">
+      <h3>A little bit of info on your star...</h3>
+      <p><%= @celebrity.bio %></p>
+    </div>
   </div>
+
+  <div class="col-12 col-sm-6 bg-white rounded p-3">
+    <h3>Book <em><b><%= @celebrity.first_name %> <%= @celebrity.last_name %></b></em> right now! </h3>
+    <%= render partial: "form" %>
+  </div>
+
+
 </div>
