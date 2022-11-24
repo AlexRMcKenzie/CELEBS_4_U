@@ -1,21 +1,29 @@
-.navbar-lewagon {
+
+.navbar-c4u {
   justify-content: space-between;
-  // background: white;
-  font-family: inter;
-  font-weight: 400;
-  font-size: 16px;
-  color: white;
-  text-transform: capitalize;
+  background: rgb(39, 38, 38);
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-c4u .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-c4u .navbar-brand img {
+  width: 125px;
+ margin-left: 20px;
+ margin-top: 5px;
+ margin-bottom: 5px;
+}
+
+
+.avatar {
+  width: 30px;
+  // border-radius: 50%;
+  margin-right: 20px;
 }
 
 .nav-link {
-  color: white;
+  font-size: 17px;
+  color: beige;
+  margin-right: 10px;
 }
