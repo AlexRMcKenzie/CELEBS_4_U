@@ -1,13 +1,17 @@
 <div class= "bg-color">
   <div class="container">
+  <div class="search-bar">
     <%= form_with url: celebrities_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
         placeholder: "Find a celebrity"
       %>
-    <%= submit_tag "Search", class: "btn btn-flat" %>
-  <% end %>
+    <%# <div class= "search-button"> %>
+      <%= submit_tag "Search", class: "btn search-button" %>
+    <%# </div> %>
+      <% end %>
+  </div>
     <div class="cards">
       <% @celebrities.each do |celebrity| %>
         <%= link_to celebrity_path(celebrity) do  %>
