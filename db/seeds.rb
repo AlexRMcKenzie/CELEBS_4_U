@@ -18,7 +18,7 @@ celebrity = Celebrity.create!(
     last_name: 'Clooney',
     age: 61,
     category: 'actor',
-    bio: 'silver fox living in Lake Como',
+    bio: 'George Timothy Clooney (born May 6, 1961) is an American actor and filmmaker. He is the recipient of numerous accolades, including a British Academy Film Award, four Golden Globe Awards, four Screen Actors Guild Awards, and two Academy Awards, one for his acting and the other as a producer. In 2018, he was the recipient of the AFI Life Achievement Award.',
     url: 'https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fi.pinimg.com%2F736x%2F33%2Fa2%2F37%2F33a2378a93f763adcd17eb4a9460bb17--beard-ideas-modern-man.jpg'
 )
 
@@ -28,7 +28,7 @@ celebrity = Celebrity.create!(
   last_name: 'Cruise',
   age: 60,
   category: 'actor',
-  bio: 'i love scientology',
+  bio: "Thomas Cruise Mapother IV (born July 3, 1962), known professionally as Tom Cruise, is an American actor and producer. One of the world's highest-paid actors, he has received various accolades, including an Honorary Palme d'Or and three Golden Globe Awards, in addition to nominations for three Academy Awards. His films have grossed over $4 billion in North America and over $11.1 billion worldwide, making him one of the highest-grossing box-office stars of all time.",
   url: 'https://i.pinimg.com/474x/c9/7c/54/c97c54d09e728cc4e68ae6f630d43984.jpg'
 )
 
@@ -46,7 +46,7 @@ celebrity = Celebrity.create!(
   last_name: 'Hamilton',
   age: 37,
   category: 'sports',
-  bio: "I hate Max Verstappen",
+  bio: "Sir Lewis Carl Davidson Hamilton MBE HonFREng (born 7 January 1985) is a British racing driver currently competing in Formula One for Mercedes. In Formula One, Hamilton has won a joint-record seven World Drivers' Championship titles (tied with Michael Schumacher), and holds the records for the most wins (103), pole positions (103), and podium finishes (191), among others.",
   url: 'https://i.pinimg.com/564x/de/df/eb/dedfeb167aaada691f67aa894911bc47.jpg'
 )
 
