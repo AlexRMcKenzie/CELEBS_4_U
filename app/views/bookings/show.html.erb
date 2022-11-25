@@ -1,1 +1,36 @@
-<%=@booking.location%>
+<div class="container mt-3">
+  <h4 style="text-align:center"><%= "You have booked:" %></h4>
+  <div class="container mt-3" style="width:900px">
+    <ol>
+        <div class="my-3 p-0 bg-light border-bottom" style="border-radius:10px; height:250px; overflow: hidden; max-width: 668px; margin: auto;">
+          <li class="d-flex align-items-start justify-content-start">
+            <div style="border-radius:10px">
+            <%= image_tag @celebrity.url, style: "float: left; width:  300px; height: 250px; object-fit: cover;"%>
+            </div>
+            <div class="p-3 lh-base">
+              <h2 class="lh-base"><%=@celebrity.first_name %> <%=@celebrity.last_name %></h2>
+              <h4 class="lh-base"><%= @booking.location %></h4>
+              <div class="d-flex align-items-center justify-content-start">
+                <div>
+                  <p>From:</p>
+                </div>
+                <div>
+                  <h5 class="px-3"><%= @booking.start_date.strftime("%A, %eth %B  %Y") %></h5>
+                  <h5 class="px-3 lh-1"><%= @booking.start_date.strftime("at %I:%M%p") %></h5>
+                </div>
+              </div>
+              <div class="d-flex align-items-center justify-content-start">
+                <div>
+                  <p>Until:</p>
+                </div>
+                <div>
+                  <h5 class="px-3"><%= @booking.end_date.strftime("%A, %eth %B  %Y") %></h5>
+                  <h5 class="px-3 lh-1"><%= @booking.end_date.strftime("at %I:%M%p") %></h5>
+                </div>
+              </div>
+            </div>
+          </li>
+        </div>
+    </ol>
+  </div>
+</div>
