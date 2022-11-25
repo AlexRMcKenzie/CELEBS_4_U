@@ -2,6 +2,10 @@
 .navbar-c4u {
   justify-content: space-between;
   background: rgb(39, 38, 38);
+  // background-color: transparent;
+  position: sticky;
+  top: 0px;
+  z-index: 1;
 }
 
 .navbar-c4u .navbar-collapse {
