@@ -1,7 +1,12 @@
 class CelebritiesController < ApplicationController
 
   def index
-    @celebrities = Celebrity.all
+    if params[:query].present?
+      sql_query = "first_name ILIKE :query OR last_name ILIKE :query"
+      @celebrities = Celebrity.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @celebrities = Celebrity.all
+    end
   end
 
   def show
