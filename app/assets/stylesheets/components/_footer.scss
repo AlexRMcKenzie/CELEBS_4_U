@@ -1,21 +1,24 @@
 
-.my-footer {
-  margin-top: 20px;
+.footer {
+  margin: auto;
+  margin-top: 10px;
   width: 100%;
-  background-color: #b38132;
-  color: white;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
 }
 .footer-links {
   display: flex;
   align-items: center;
 }
 .footer-links a {
-  color: white;
-  opacity: 0.25;
+  color: #b38132;
+  opacity: 0.45;
   text-decoration: none;
   font-size: 34px;
-  padding: 5px 5px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 .footer-links a:hover {
   opacity: 1;
