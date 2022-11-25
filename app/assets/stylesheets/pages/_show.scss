@@ -1,9 +1,11 @@
 .celeb-image {
   background-size: cover;
-  background-position: top;
-  padding: 150px 0;
-  height: calc(100vh - 83.81px);
+  // background-position: top;
+  // padding: 150px 0;
+  // height: calc(100vh - 83.81px);
   width: 100%;
+  height: 100vh;
+  padding-right: -12px;
 }
 
 .celeb-image h1 {
@@ -12,15 +14,55 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
+  padding-left: 20px;
+  padding-top: 75px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 30px;
 }
 
-.celeb-image p {
-  font-size: 20px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+// .celeb-image p {
+//   font-size: 20px;
+//   color: white;
+//   opacity: .7;
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+//   // padding-left: 30px;
+// }
+
+.celeb-info {
+  padding-top: 200px;
+  padding-bottom: 200px;
+  // background-color: white;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: #fcfdf8;
+  height: 100vh;
+  margin-left: 0;
+  width: 100%;
+  align-items: center;
 }
 
-.info {
-  padding-top: 30px;
+.celeb-info {
+  h2 {
+    font-size: 40px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  h3 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 25px;
+  }
 }
+
+.celeb-bio {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 30px;
+}
+
+.celeb-age {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 25px;
+  }
+
+// .celeb-form {
+//   padding-left: 5px;
+// }
