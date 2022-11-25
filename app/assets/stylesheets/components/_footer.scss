@@ -1,5 +1,6 @@
 
 .footer {
+  flex-shrink: 0;
   margin: auto;
   margin-top: 10px;
   width: 100%;
@@ -8,6 +9,13 @@
   justify-content: center;
   padding: 15px;
 }
+
+// .footer {
+//   z-index: 1;
+//   background-color: red;
+//   height: 50px;
+//   margin-top: -50px;
+// }
 .footer-links {
   display: flex;
   align-items: center;
