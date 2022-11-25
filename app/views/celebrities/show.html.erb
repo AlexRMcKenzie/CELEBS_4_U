@@ -1,3 +1,4 @@
+<%# celeb image %>
 <div class="row m-0">
   <div class="col-12 col-lg-6 ps-0">
     <div class="celeb-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= @celebrity.url %>');">
@@ -6,25 +7,29 @@
       </div>
     </div>
   </div>
-    <div class="col-12 col-lg-6">
-      <div class="info">
-        <div class="celeb-show-card">
-          <h2><%= @celebrity.category.capitalize %></h2>
-          <p class="celeb-age"><%= @celebrity.age %> years young</p>
-        </div>
-        <div class="celeb-show-card">
-          <h3>A little bit of info on your star...</h3>
-          <p><%= @celebrity.bio %></p>
-        </div>
-        <div class="bg-white rounded p-3">
+
+<%# celeb info and booking form %>
+  <div class="col-12 col-lg-6 ps-0">
+    <div class="celeb-info">
+    <h2><%= @celebrity.category.capitalize %></h2>
+      <p class="celeb-age"><%= @celebrity.age %> years young</p>
+    <h3>A little bit of info on your star...</h3>
+      <p class="celeb-bio"><%= @celebrity.bio %></p>
+    <div class="celeb-form">
           <h3>Book <em><b><%= @celebrity.first_name %> <%= @celebrity.last_name %></b></em> right now! </h3>
           <%= render partial: "form" %>
-        </div>
-      </div>
     </div>
 
+<<<<<<< HEAD
 
 
+=======
+  <div class="col-12 col-sm-6 bg-white rounded p-3">
+    <h3>Book <em><b><%= @celebrity.first_name %> <%= @celebrity.last_name %></b></em> right now! </h3>
+    <%= render partial: "form" %>
+  </div>
+  </div>
+>>>>>>> 4ba4d1dd2455214933d358b86b7ef5ad0eb23f54
 
 
 </div>
