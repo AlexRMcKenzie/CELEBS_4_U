@@ -68,3 +68,16 @@
 .float-parent-element {
   width: 50%;
 }
+
+.btn-primary {
+  background-color: #b38132;
+  border: none;
+  transition: background 0.3s ease;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
