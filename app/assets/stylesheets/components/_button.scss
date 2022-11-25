@@ -10,8 +10,21 @@
 //   height: 30px;
 // }
 // }
-.btn-primary {
-  background-color: #c59f23;
-  border: none;
-  border-radius: 5px;
+// .btn-primary {
+//   background-color: #c59f23;
+//   border: none;
+//   border-radius: 5px;
+// }
+
+.search-button {
+   color: white;
+  padding: 8px 20px;
+  border-radius: 6px;
+  background: #b38132;
+  transition: background 0.3s ease;
+  font-size: 12px;
+  font-family: inter;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
 }
